@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phishing Shield</title>
+  <link rel="stylesheet" href="popup.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- ─── Header ─────────────────────────────────────────────── -->
+  <header id="header">
+    <div class="logo-row">
+      <svg class="shield-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 7V12C3 17.25 6.75 22.13 12 23C17.25 22.13 21 17.25 21 12V7L12 2Z"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="shield-check" d="M9 12L11 14L15 10"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h1>Phishing Shield</h1>
+    </div>
+    <p class="tagline">AI-powered real-time URL safety scanner</p>
+  </header>
+
+  <!-- ─── URL Display ────────────────────────────────────────── -->
+  <section id="url-section">
+    <label for="current-url">Current Tab URL</label>
+    <div class="url-box" id="url-box">
+      <span id="current-url">Detecting…</span>
+    </div>
+  </section>
+
+  <!-- ─── Result Card ────────────────────────────────────────── -->
+  <section id="result-card" class="hidden">
+    <div class="result-icon-wrapper" id="result-icon-wrapper">
+      <!-- Injected by JS -->
+    </div>
+    <h2 id="result-title">Analyzing…</h2>
+    <p id="result-description"></p>
+
+    <!-- Confidence Bar -->
+    <div class="confidence-section">
+      <div class="confidence-label">
+        <span>Confidence</span>
+        <span id="confidence-value">—</span>
+      </div>
+      <div class="confidence-track">
+        <div class="confidence-fill" id="confidence-fill"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Scan Button ────────────────────────────────────────── -->
+  <button id="scan-btn" class="scan-btn">
+    <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M21 21L16.65 16.65M19 11A8 8 0 1 1 3 11a8 8 0 0 1 16 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    Scan This Page
+  </button>
+
+  <!-- ─── Status Bar ─────────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="status-dot" id="status-dot"></div>
+    <span id="status-text">Checking backend…</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

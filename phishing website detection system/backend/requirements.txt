@@ -1,0 +1,10 @@
+flask
+flask-cors
+gunicorn
+nltk
+scikit-learn
+xgboost
+python-whois
+requests
+beautifulsoup4
+scipy
